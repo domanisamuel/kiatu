@@ -1,0 +1,46 @@
+// fonts
+
+// colors
+$color-white: #fff;
+$color-gray-light:#f0f2f5;
+$color-gray-dark:#495057;
+$color-vivid-red: #ff0476;
+$color-lime-green: #00ce83;
+$color-line: #DFE2E5;
+$color-blue: #2070D8;
+
+// border-radius
+$border-radius: 8px;
+$border-radius-max: 999em;
+
+// box-shadows
+$box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+$box-shadow-button: 0 16px 26px -10px rgba(63,106,216,0.56), 0 4px 25px 0px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(63,106,216,0.2);
+
+
+html {
+
+  body {
+      overflow-x: hidden !important ; /*preventing overflow*/
+      margin: 0;
+      padding: 0;
+      color: $color-gray-dark;
+      font-size: 14px;
+      font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      line-height: 1.5;
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+      .nav-link {
+          text-decoration: none;
+          cursor: pointer;
+          color: inherit;
+      }
+
+      button {
+          outline: none;
+      }
+
+  }
+
+}

@@ -1,2 +1,2 @@
-# bathu
+# bathu 👟
 sneakers store
