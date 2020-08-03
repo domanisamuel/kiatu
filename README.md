@@ -1,2 +1,2 @@
 # bathu
-shoes e-commerce
+sneakers store
