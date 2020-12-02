@@ -30,7 +30,7 @@ const Navigation: React.FC =()=> {
                     </li>
                 </ul>
                 <div className='bag'>
-                    <BagIcon height='30'/>
+                    <BagIcon height='30'/><span className='bag-count'>{0}</span>
                 </div>
             </div>
             <div className="mobile-menu" onClick={handleClick}>

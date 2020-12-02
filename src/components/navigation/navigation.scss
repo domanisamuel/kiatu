@@ -48,6 +48,14 @@
     svg {
       vertical-align: middle;
       fill: $color-red;
+      width: 30px;
+    }
+    .bag-count {
+      background: $color-green;
+      color: $color-white;
+      border-radius: 50%;
+      padding: 2px 7px;
+      margin-left: -5px;
     }
   }
 }
