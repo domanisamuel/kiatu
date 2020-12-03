@@ -1,10 +1,13 @@
 import React from 'react'
 import styles from './Home.module.scss'
 
+// components
+import MainSlide from '../../components/main-slide/main-slide'
+
 const HomePage: React.FC =()=> {
     return (
         <div className={styles.home}>
-            <h1>Welcome to Bathu Sneakers! <span role='img' aria-label=''> 👟</span></h1>
+            <MainSlide/>
         </div>
     )
 }

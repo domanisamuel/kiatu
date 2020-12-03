@@ -21,9 +21,11 @@ const Navigation: React.FC =()=> {
     return (
         <div className="navigation">
             <div className="logo-nav">
-                <div className="logo-container">
-                   <Link to='/'><img src={Logo} alt='logo' height='50' className='logo' /></Link>
-                </div>
+                <Link to='/'>
+                <span className="logo-container">
+                   <img src={Logo} alt='logo' height='40' className='logo' />
+                </span>
+                </Link>
                 <div className={click ? "nav-options active" : "nav-options"}>
                     <span className="option" onClick={closeMobileMenu}>
                         <Link to='/clothing' className='nav-link'>Clothing</Link>
@@ -48,7 +50,7 @@ const Navigation: React.FC =()=> {
                 {/* menu */}
                 <span className="mobile-menu" onClick={handleClick}>
                     {click ? (
-                    <img src={CloseIcon} alt='logo' height='30' className="menu-icon" />
+                        <img src={CloseIcon} alt='logo' height='30' className="menu-icon" />
                     ) : (
                         <MenuIcon height='30'/>
                     )}
