@@ -17,8 +17,7 @@ const Navigation: React.FC =()=> {
 
     // themes
     const { theme, setTheme } = useTheme();
-    console.log(theme);
-
+    
     return (
         <div className="navigation">
             <div className="logo-nav">

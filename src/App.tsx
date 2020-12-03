@@ -9,7 +9,7 @@ import ErrorPage from './pages/404/ErrorPage';
 import Preloader from './components/preloader/preloader';
 import Navigation from './components/navigation/navigation'
 
-// context
+// themes
 import { ThemeContext, Theme } from './themes/themeContext'
 
 function App() {
@@ -26,15 +26,13 @@ function App() {
   else {
     return (
       <ThemeContext.Provider value={{theme, setTheme}}>
-        <div className='app'>
-          <BrowserRouter>
-            <Navigation/>
-            <Switch>
-              <Route path='/' exact component={HomePage}/>
-              <Route component={ErrorPage}/>
-            </Switch>
-          </BrowserRouter>
-        </div>
+            <BrowserRouter>
+              <Navigation/>
+              <Switch>
+                <Route path='/' exact component={HomePage}/>
+                <Route component={ErrorPage}/>
+              </Switch>
+            </BrowserRouter>
       </ThemeContext.Provider>
     );
   }
