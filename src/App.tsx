@@ -21,15 +21,13 @@ function App() {
   } 
   else {
     return (
-      <div className="App">
-        <BrowserRouter>
-          <Navigation/>
-            <Switch>
-              <Route path='/' exact component={HomePage}/>
-              <Route component={ErrorPage}/>
-            </Switch>
-          </BrowserRouter>
-      </div>
+      <BrowserRouter>
+        <Navigation/>
+        <Switch>
+          <Route path='/' exact component={HomePage}/>
+          <Route component={ErrorPage}/>
+        </Switch>
+      </BrowserRouter>
     );
   }
 }

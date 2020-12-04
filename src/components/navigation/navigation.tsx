@@ -8,6 +8,7 @@ import { ReactComponent as BagIcon } from '../../assets/icons/shopping-bag.svg'
 import CloseIcon from '../../assets/images/close.png'
 
 const Navigation: React.FC =()=> {
+    // navigation
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
@@ -15,30 +16,40 @@ const Navigation: React.FC =()=> {
     return (
         <div className="navigation">
             <div className="logo-nav">
-                <div className="logo-container">
-                    <Link to='/'><img src={Logo} alt='logo' height='50' /></Link>
+                <Link to='/'>
+                <span className="logo-container">
+                   <img src={Logo} alt='logo' height='40' className='logo' />
+                </span>
+                </Link>
+                <div className={click ? "nav-options active" : "nav-options"}>
+                    <span className="option" onClick={closeMobileMenu}>
+                        <Link to='/clothing' className='nav-link'>Clothing</Link>
+                    </span>
+                    <span className="option" onClick={closeMobileMenu}>
+                        <Link to='/shoes' className='nav-link'>Footwear</Link>
+                    </span>
+                    <span className="option" onClick={closeMobileMenu}>
+                        <Link to='/beauty' className='nav-link'>Beauty</Link>
+                    </span>
+                    <span className="option" onClick={closeMobileMenu}>
+                        <Link to='/bags' className='nav-link'>Bags</Link>
+                    </span>
                 </div>
-                <ul className={click ? "nav-options active" : "nav-options"}>
-                    <li className="option" onClick={closeMobileMenu}>
-                        <Link to='/shop' className='nav-link'>Shop</Link>
-                    </li>
-                    <li className="option" onClick={closeMobileMenu}>
-                        <Link to='/care' className='nav-link'>Sneaker Care</Link>
-                    </li>
-                    <li className="option" onClick={closeMobileMenu}>
-                        <Link to='/bag' className='nav-link'>Bag</Link>
-                    </li>
-                </ul>
-                <div className='bag'>
+                {/* cart */}
+                <span className='bag'>
                     <BagIcon height='30'/><span className='bag-count'>{0}</span>
-                </div>
-            </div>
-            <div className="mobile-menu" onClick={handleClick}>
-                {click ? (
-                <img src={CloseIcon} alt='logo' height='30' className="menu-icon" />
-                ) : (
-                    <MenuIcon height='30'/>
-                )}
+                </span>
+                <span>
+                    <button>theme</button>
+                </span>
+                {/* menu */}
+                <span className="mobile-menu" onClick={handleClick}>
+                    {click ? (
+                        <img src={CloseIcon} alt='logo' height='30' className="menu-icon" />
+                    ) : (
+                        <MenuIcon height='30'/>
+                    )}
+                </span>
             </div>
         </div>
     )
