@@ -17,12 +17,10 @@ const Navigation: React.FC =()=> {
     const closeMobileMenu = () => setClick(false);
     //themes
     const { theme, setTheme } = useTheme()
-    const [ currentTheme, setCurrentTheme ] = useState('')
+    const [ currentTheme, setCurrentTheme ] = useState('dark')
     const changeTheme =()=> {
-        setTheme('dark')
-        setCurrentTheme(currentTheme === '' ? 'dark' : currentTheme === 'light' ?  'dark' : 'light')
+        setCurrentTheme(currentTheme === 'light' ?  'dark' : 'light')
         setTheme(currentTheme)
-        localStorage.setItem('_theme', currentTheme)
     }
     
     return (

@@ -16,13 +16,11 @@ import { themeChecker } from './themes/themeChecker'
 function App() {
   const [ spinner, setSpinner ] = useState(true); // preloading
   //theme
-  const [ theme, setTheme ] = useState(`${localStorage.getItem('_theme')}`)
+  const [ theme, setTheme ] = useState('')
   themeChecker(theme)
   
   useEffect(()=> {
     setTimeout(()=> setSpinner(false), 1000); // preloading
-    //theme
-    localStorage.getItem('_theme') === null ? localStorage.setItem('_theme','light') : localStorage.setItem('_theme','dark')
   },[]);
 
   if(spinner) {
@@ -31,7 +29,6 @@ function App() {
   else {
     return (
       <ThemeContext.Provider value={{theme, setTheme}}>
-        {theme}
         <BrowserRouter>
           <Navigation/>
           <Switch>
