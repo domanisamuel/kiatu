@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import './navigation.scss'
 import { Link } from 'react-router-dom'
 
-import Logo from '../../assets/images/logo.png'
+import BlackLogo from '../../assets/images/black-logo.png'
+import WhiteLogo from '../../assets/images/white-logo.png'
 import { ReactComponent as MenuIcon } from '../../assets/icons/menu.svg'
 import { ReactComponent as BagIcon } from '../../assets/icons/shopping-bag.svg'
 import CloseIcon from '../../assets/images/close.png'
@@ -28,7 +29,7 @@ const Navigation: React.FC =()=> {
             <div className="logo-nav">
                 <Link to='/'>
                 <span className="logo-container">
-                   <img src={Logo} alt='logo' height='40' className='logo' />
+                   <img src={currentTheme === 'dark' ? BlackLogo : WhiteLogo} alt='logo' height='40' className='logo' />
                 </span>
                 </Link>
                 <div className={click ? "nav-options active" : "nav-options"}>
