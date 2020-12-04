@@ -19,8 +19,10 @@ const Navigation: React.FC =()=> {
     const { theme, setTheme } = useTheme()
     const [ currentTheme, setCurrentTheme ] = useState('')
     const changeTheme =()=> {
-        setCurrentTheme(currentTheme === 'light' ? 'dark' : 'light')
+        setTheme('dark')
+        setCurrentTheme(currentTheme === '' ? 'dark' : currentTheme === 'light' ?  'dark' : 'light')
         setTheme(currentTheme)
+        localStorage.setItem('_theme', currentTheme)
     }
     
     return (
@@ -50,7 +52,7 @@ const Navigation: React.FC =()=> {
                     <BagIcon height='30'/><span className='bag-count'>{0}</span>
                 </span>
                 <span>
-                    <button onClick={changeTheme}>{theme}</button>
+                    <button onClick={changeTheme}>{theme === 'dark' ? '*' : ')'}</button>
                 </span>
                 {/* menu */}
                 <span className="mobile-menu" onClick={handleClick}>

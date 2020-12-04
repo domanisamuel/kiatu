@@ -11,14 +11,18 @@ import Navigation from './components/navigation/navigation'
 
 //theme
 import { ThemeContext } from './themes/themeContext'
+import { themeChecker } from './themes/themeChecker'
 
 function App() {
   const [ spinner, setSpinner ] = useState(true); // preloading
   //theme
-  const [ theme, setTheme ] = useState('')
+  const [ theme, setTheme ] = useState(`${localStorage.getItem('_theme')}`)
+  themeChecker(theme)
   
   useEffect(()=> {
     setTimeout(()=> setSpinner(false), 1000); // preloading
+    //theme
+    localStorage.getItem('_theme') === null ? localStorage.setItem('_theme','light') : localStorage.setItem('_theme','dark')
   },[]);
 
   if(spinner) {

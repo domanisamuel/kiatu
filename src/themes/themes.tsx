@@ -1,18 +1,10 @@
 
 export const lightTheme = {
-    color:'',
-    background:''
-    // body: '#E2E2E2',
-    // text: '#363537',
-    // toggleBorder: '#FFF',
-    // gradient: 'linear-gradient(#39598A, #79D7ED)',
+    background: document.body.style.backgroundColor = "#fff",
+    color: document.body.style.color = "#495057"
 }
 
 export const darkTheme = {
-    color:'white',
-    background:'black'
-    // body: '#363537',
-    // text: '#FAFAFA',
-    // toggleBorder: '#6B8096',
-    // gradient: 'linear-gradient(#091236, #1E215D)',
+    background: document.body.style.backgroundColor = "#000",
+    color: document.body.style.color = "#f0f0f0"
 }

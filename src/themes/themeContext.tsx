@@ -5,5 +5,5 @@ export type ThemeContextType = {
     setTheme: (Theme:any) => void
 }
 
-export const ThemeContext = createContext<ThemeContextType>({ theme: '', setTheme: Theme => Theme})
+export const ThemeContext = createContext<ThemeContextType>({ theme: '', setTheme: Theme => Theme })
 export const useTheme = () => useContext(ThemeContext)
