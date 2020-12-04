@@ -51,7 +51,7 @@ const Navigation: React.FC =()=> {
                     <BagIcon height='30'/><span className='bag-count'>{0}</span>
                 </span>
                 <span>
-                    <button onClick={changeTheme}>{theme === 'dark' ? '*' : ')'}</button>
+                    <button onClick={changeTheme}>{theme === 'dark' ? '🌞' : '🌙'}</button>
                 </span>
                 {/* menu */}
                 <span className="mobile-menu" onClick={handleClick}>
