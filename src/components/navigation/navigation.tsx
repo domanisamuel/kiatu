@@ -7,11 +7,21 @@ import { ReactComponent as MenuIcon } from '../../assets/icons/menu.svg'
 import { ReactComponent as BagIcon } from '../../assets/icons/shopping-bag.svg'
 import CloseIcon from '../../assets/images/close.png'
 
+//themes
+import { useTheme } from '../../themes/themeContext'
+
 const Navigation: React.FC =()=> {
     // navigation
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
+    //themes
+    const { theme, setTheme } = useTheme()
+    const [ currentTheme, setCurrentTheme ] = useState('')
+    const changeTheme =()=> {
+        setCurrentTheme(currentTheme === 'light' ? 'dark' : 'light')
+        setTheme(currentTheme)
+    }
     
     return (
         <div className="navigation">
@@ -40,7 +50,7 @@ const Navigation: React.FC =()=> {
                     <BagIcon height='30'/><span className='bag-count'>{0}</span>
                 </span>
                 <span>
-                    <button>theme</button>
+                    <button onClick={changeTheme}>{theme}</button>
                 </span>
                 {/* menu */}
                 <span className="mobile-menu" onClick={handleClick}>

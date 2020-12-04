@@ -9,8 +9,13 @@ import ErrorPage from './pages/404/ErrorPage';
 import Preloader from './components/preloader/preloader';
 import Navigation from './components/navigation/navigation'
 
+//theme
+import { ThemeContext } from './themes/themeContext'
+
 function App() {
   const [ spinner, setSpinner ] = useState(true); // preloading
+  //theme
+  const [ theme, setTheme ] = useState('')
   
   useEffect(()=> {
     setTimeout(()=> setSpinner(false), 1000); // preloading
@@ -21,13 +26,16 @@ function App() {
   } 
   else {
     return (
-      <BrowserRouter>
-        <Navigation/>
-        <Switch>
-          <Route path='/' exact component={HomePage}/>
-          <Route component={ErrorPage}/>
-        </Switch>
-      </BrowserRouter>
+      <ThemeContext.Provider value={{theme, setTheme}}>
+        {theme}
+        <BrowserRouter>
+          <Navigation/>
+          <Switch>
+            <Route path='/' exact component={HomePage}/>
+            <Route component={ErrorPage}/>
+          </Switch>
+        </BrowserRouter>
+      </ThemeContext.Provider>
     );
   }
 }
