@@ -22,6 +22,7 @@ const Navigation: React.FC =()=> {
     const changeTheme =()=> {
         setCurrentTheme(currentTheme === 'light' ?  'dark' : 'light')
         setTheme(currentTheme)
+        localStorage.setItem('_theme', currentTheme)
     }
     
     return (

@@ -21,6 +21,7 @@ function App() {
   
   useEffect(()=> {
     setTimeout(()=> setSpinner(false), 1000); // preloading
+    setTheme(`${localStorage.getItem('_theme')}`)
   },[]);
 
   if(spinner) {
