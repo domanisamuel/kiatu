@@ -3,7 +3,7 @@
 
 /*Desktop View*/
 .navigation {
-  padding: 5px 0;
+  padding: 20px 0;
 
   .logo-nav {
     display: flex;
@@ -19,7 +19,7 @@
 
   .nav-link {
     color: inherit;
-    font-weight: bold;
+    text-transform: uppercase;
     padding: 0 10%;
   }
 
