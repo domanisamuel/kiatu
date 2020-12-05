@@ -8,6 +8,7 @@ import ErrorPage from './pages/404/ErrorPage';
 //components
 import Preloader from './components/preloader/preloader';
 import Navigation from './components/navigation/navigation'
+import Footer from './components/footer/footer'
 
 //theme
 import { ThemeContext } from './themes/themeContext'
@@ -36,6 +37,7 @@ function App() {
             <Route path='/' exact component={HomePage}/>
             <Route component={ErrorPage}/>
           </Switch>
+          <Footer/>
         </BrowserRouter>
       </ThemeContext.Provider>
     );
