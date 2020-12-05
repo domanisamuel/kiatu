@@ -2,23 +2,35 @@ import React, { useState } from 'react'
 import './navigation.scss'
 import { Link } from 'react-router-dom'
 
-import Logo from '../../assets/images/logo.png'
+import BlackLogo from '../../assets/images/black-logo.png'
+import WhiteLogo from '../../assets/images/white-logo.png'
 import { ReactComponent as MenuIcon } from '../../assets/icons/menu.svg'
 import { ReactComponent as BagIcon } from '../../assets/icons/shopping-bag.svg'
 import CloseIcon from '../../assets/images/close.png'
+
+//themes
+import { useTheme } from '../../themes/themeContext'
 
 const Navigation: React.FC =()=> {
     // navigation
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
+    //themes
+    const { theme, setTheme } = useTheme()
+    const [ currentTheme, setCurrentTheme ] = useState('dark')
+    const changeTheme =()=> {
+        setCurrentTheme(currentTheme === 'light' ?  'dark' : 'light')
+        setTheme(currentTheme)
+        localStorage.setItem('_theme', currentTheme)
+    }
     
     return (
         <div className="navigation">
             <div className="logo-nav">
                 <Link to='/'>
                 <span className="logo-container">
-                   <img src={Logo} alt='logo' height='40' className='logo' />
+                   <img src={currentTheme === 'dark' ? BlackLogo : WhiteLogo} alt='logo' height='40' className='logo' />
                 </span>
                 </Link>
                 <div className={click ? "nav-options active" : "nav-options"}>
@@ -40,7 +52,7 @@ const Navigation: React.FC =()=> {
                     <BagIcon height='30'/><span className='bag-count'>{0}</span>
                 </span>
                 <span>
-                    <button>theme</button>
+                    <button onClick={changeTheme}>{theme === 'dark' ? '🌞' : '🌙'}</button>
                 </span>
                 {/* menu */}
                 <span className="mobile-menu" onClick={handleClick}>

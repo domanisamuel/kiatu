@@ -9,11 +9,19 @@ import ErrorPage from './pages/404/ErrorPage';
 import Preloader from './components/preloader/preloader';
 import Navigation from './components/navigation/navigation'
 
+//theme
+import { ThemeContext } from './themes/themeContext'
+import { themeChecker } from './themes/themeChecker'
+
 function App() {
   const [ spinner, setSpinner ] = useState(true); // preloading
+  //theme
+  const [ theme, setTheme ] = useState('')
+  themeChecker(theme)
   
   useEffect(()=> {
     setTimeout(()=> setSpinner(false), 1000); // preloading
+    setTheme(`${localStorage.getItem('_theme')}`)
   },[]);
 
   if(spinner) {
@@ -21,13 +29,15 @@ function App() {
   } 
   else {
     return (
-      <BrowserRouter>
-        <Navigation/>
-        <Switch>
-          <Route path='/' exact component={HomePage}/>
-          <Route component={ErrorPage}/>
-        </Switch>
-      </BrowserRouter>
+      <ThemeContext.Provider value={{theme, setTheme}}>
+        <BrowserRouter>
+          <Navigation/>
+          <Switch>
+            <Route path='/' exact component={HomePage}/>
+            <Route component={ErrorPage}/>
+          </Switch>
+        </BrowserRouter>
+      </ThemeContext.Provider>
     );
   }
 }

@@ -3,9 +3,7 @@
 
 /*Desktop View*/
 .navigation {
-  padding: 5px 0;
-  background: $color-light-gray;
-  box-shadow: $glovo-box-shadow;
+  padding: 20px 0;
 
   .logo-nav {
     display: flex;
@@ -20,8 +18,8 @@
   }
 
   .nav-link {
-    color: $color-text;
-    font-weight: bold;
+    color: inherit;
+    text-transform: uppercase;
     padding: 0 10%;
   }
 
@@ -51,6 +49,12 @@
       padding: 2px 7px;
       margin-left: -5px;
     }
+  }
+
+  button {
+    font-size: 20px;
+    border: none;
+    background: transparent;
   }
 }
 
