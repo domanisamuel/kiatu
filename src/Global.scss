@@ -14,6 +14,8 @@ $color-red: #DD0E34;
 $color-green: #00b172;
 $color-orange: #f6a704; 
 
+$shade-one: linear-gradient(to right, rgb(255, 84, 131), rgb(255, 174, 12));
+
 // border-radius
 $border-radius: 12px;
 $border-radius-max: 999rem;
@@ -22,6 +24,24 @@ $border-radius-max: 999rem;
 $glovo-box-shadow: 0 2px 20px 0 rgba(0,0,0,.1);
 $fb-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 $box-shadow-button: 0 16px 26px -10px rgba(63,106,216,0.56), 0 4px 25px 0px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(63,106,216,0.2);
+
+// mixins
+@mixin page {
+  margin: 0;
+  padding: 1% 5%;
+  min-height: 100vh;
+}
+
+@mixin top {
+  background: $shade-one;
+  padding: 10px;
+  text-align: center;
+  color: $color-white;
+
+  h1 {
+      font-weight: 700;
+  }
+}
 
 
 html {

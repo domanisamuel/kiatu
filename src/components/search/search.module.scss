@@ -1,0 +1,27 @@
+
+@import '../../Global.scss';
+
+.search_container {
+    display: inline-flex;
+    flex: 1 1 300px;
+    position: relative;
+    border:0;
+    border-bottom: 2px $color-green solid;
+    background-color: transparent;
+    overflow: hidden;
+    margin:20px 0;
+
+    .icon {
+        font-size: 20px;
+        color: $color-green;
+        margin-right: 10px;
+    }
+
+    .search_input {
+        border: 0;
+        padding: 0.5rem 0.5rem 0.5rem 0;
+        flex: 1;
+        background-color: transparent;
+        outline: none;
+    }
+}
