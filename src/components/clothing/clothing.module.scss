@@ -1,0 +1,10 @@
+
+@import '../../Global.scss';
+
+.clothing {
+    @include page();
+
+    .top {
+        @include top()
+    }
+}

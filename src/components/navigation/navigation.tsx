@@ -49,7 +49,7 @@ const Navigation: React.FC =()=> {
                 </div>
                 {/* cart */}
                 <span className='bag'>
-                    <BagIcon height='30'/><span className='bag-count'>{0}</span>
+                    <Link to='/cart'><BagIcon height='30'/><span className='bag-count'>{0}</span></Link>
                 </span>
                 <span>
                     <button onClick={changeTheme}>{theme === 'dark' ? '🌞' : '🌙'}</button>
